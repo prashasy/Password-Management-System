@@ -15,7 +15,7 @@ class app:
 	def generatePas():
 		string=""
 		arr=[0,1,12,3,4,5,6,7,8,9,'!','@','#','$','%','^','&','*','-','+',':',',','.','<','>','?','/','\\','{','}','q','w','e','r','t','y','u','i','o','p','a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m']
-		for i in range(1,8): 
+		for i in range(0,8): 
 			string+=str(arr[randint(0,43)])
 		messagebox.showinfo("Random Password",string)
 		print(string)
@@ -23,21 +23,26 @@ class app:
 
 	def passGen(master):
 		global string
+		master.destroy()
 		string="Aß∫ "
 		wn=tk.Tk()
 		wn.geometry("800x800")
 		wn.configure(background="grey")
+		xy = tk.PhotoImage (file = "tumblr.gif")
+		l=tk.Label(wn,image=xy)
+		l.image=xy
+		l.place(x=0,y=0,relwidth=1,relheight=1)
 		l_title=tk.Message(wn,text="Password Generator",relief="raised",width=2000,padx=520,pady=10,fg="white",bg="black",justify="center",anchor="center")
 		l_title.config(font=("Courier",24))
 		l_title.pack(side="top")
-		l_foot=tk.Message(wn,text="JUIT",relief="raised",width=2000,padx=520,pady=10,fg="white",bg="black",justify="center",anchor="center")
+		l_foot=tk.Message(wn,text="J U I T",relief="raised",width=2000,padx=520,pady=10,fg="white",bg="black",justify="center",anchor="center")
 		l_foot.config(font=("Courier",24))
 		l_foot.pack(side="bottom")	
 
 
 		b=tk.Button(wn,text="Generate a random password",command=lambda:app.generatePas())	
-		b.pack(side="top")
-		back=tk.Button(wn,text="Go Back",command=lambda:wn.destroy())
+		b.place(x=250,y=450)
+		back=tk.Button(wn,text="Go Back",command=lambda:app.Return_to_Main(wn))
 		back.pack(side="bottom")
 
 		wn.bind("<Return>",lambda x: app.generatePas())
@@ -60,7 +65,7 @@ class app:
 		l_title=tk.Message(wn,text="SignUp for the Password Management System",relief="raised",width=2000,padx=520,pady=10,fg="white",bg="black",justify="center",anchor="center")
 		l_title.config(font=("Courier",24))
 		l_title.pack(side="top")
-		l_foot=tk.Message(wn,text="JUIT",relief="raised",width=2000,padx=520,pady=10,fg="white",bg="black",justify="center",anchor="center")
+		l_foot=tk.Message(wn,text="J U I T",relief="raised",width=2000,padx=520,pady=10,fg="white",bg="black",justify="center",anchor="center")
 		l_foot.config(font=("Courier",24))
 		l_foot.pack(side="bottom")
 		l1=tk.Label(wn,text="Enter Name:",relief="raised")
@@ -90,7 +95,7 @@ class app:
 		l_title=tk.Message(wn,text="SignUp for the Password Management System",relief="raised",width=2000,padx=520,pady=10,fg="white",bg="black",justify="center",anchor="center")
 		l_title.config(font=("Courier",24))
 		l_title.pack(side="top")
-		l_foot=tk.Message(wn,text="JUIT",relief="raised",width=2000,padx=520,pady=10,fg="white",bg="black",justify="center",anchor="center")
+		l_foot=tk.Message(wn,text="J U I T",relief="raised",width=2000,padx=520,pady=10,fg="white",bg="black",justify="center",anchor="center")
 		l_foot.config(font=("Courier",24))
 		l_foot.pack(side="bottom")
 		l1=tk.Label(wn,text="Enter Name of Website:",relief="raised")
@@ -112,7 +117,7 @@ class app:
 		l_title=tk.Message(wn,text="Your Saved Passwords:",relief="raised",width=2000,padx=520,pady=10,fg="white",bg="black",justify="center",anchor="center")
 		l_title.config(font=("Courier",24))
 		l_title.pack(side="top")
-		l_foot=tk.Message(wn,text="JUIT",relief="raised",width=2000,padx=520,pady=10,fg="white",bg="black",justify="center",anchor="center")
+		l_foot=tk.Message(wn,text="J U I T",relief="raised",width=2000,padx=520,pady=10,fg="white",bg="black",justify="center",anchor="center")
 		l_foot.config(font=("Courier",24))
 		l_foot.pack(side="bottom")
 		frec=open(user+"-records.txt",'r')
@@ -135,7 +140,7 @@ class app:
 		l_title=tk.Message(wn,text="",relief="raised",width=2000,padx=520,pady=10,fg="white",bg="black",justify="center",anchor="center")
 		l_title.config(font=("Courier",24))
 		l_title.pack(side="top")
-		l_foot=tk.Message(wn,text="JUIT",relief="raised",width=2000,padx=520,pady=10,fg="white",bg="black",justify="center",anchor="center")
+		l_foot=tk.Message(wn,text="J U I T",relief="raised",width=2000,padx=520,pady=10,fg="white",bg="black",justify="center",anchor="center")
 		l_foot.config(font=("Courier",24))
 		l_foot.pack(side="bottom")
 
@@ -173,7 +178,7 @@ class app:
 		l_title=tk.Message(wn,text="SignUp for the Password Management System",relief="raised",width=2000,padx=520,pady=10,fg="white",bg="black",justify="center",anchor="center")
 		l_title.config(font=("Courier",24))
 		l_title.pack(side="top")
-		l_foot=tk.Message(wn,text="JUIT",relief="raised",width=2000,padx=520,pady=10,fg="white",bg="black",justify="center",anchor="center")
+		l_foot=tk.Message(wn,text="J U I T",relief="raised",width=2000,padx=520,pady=10,fg="white",bg="black",justify="center",anchor="center")
 		l_foot.config(font=("Courier",24))
 		l_foot.pack(side="bottom")
 		l1=tk.Label(wn,text="Enter Name:",relief="raised")
@@ -197,7 +202,7 @@ class app:
 		l_title=tk.Message(text="Welcome to the Password Management System",relief="raised",width=2000,padx=520,pady=10,fg="white",bg="black",justify="center",anchor="center")
 		l_title.config(font=("Courier",24))
 		l_title.pack(side="top")
-		l_foot=tk.Message(text="JUIT",relief="raised",width=2000,padx=520,pady=10,fg="white",bg="black",justify="center",anchor="center")
+		l_foot=tk.Message(text="J U I T",relief="raised",width=2000,padx=520,pady=10,fg="white",bg="black",justify="center",anchor="center")
 		l_foot.config(font=("Courier",24))
 		l_foot.pack(side="bottom")
 		b1=tk.Button(text="SignUp",command=lambda:app.passMngr_signup())
@@ -234,7 +239,7 @@ class app:
 		b3.place(x=475,y=340)	
 
 
-		l_foot=tk.Message(text="JUIT",relief="raised",width=2000,padx=520,pady=10,fg="white",bg="black",justify="center",anchor="center")
+		l_foot=tk.Message(text="J U I T",relief="raised",width=2000,padx=520,pady=10,fg="white",bg="black",justify="center",anchor="center")
 		l_foot.config(font=("Courier",24))
 		l_foot.pack(side="bottom")
 		rootwn.mainloop()
